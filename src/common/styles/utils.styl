@@ -17,6 +17,176 @@
       transform: translate(-50%, -50%) rotate(0deg)
     }
     100% {
-      transform: translate(-50%, -50%) rotate(360deg)
+      transform: translate(-50%, -50%) rotate(-360deg)
     }
 }
+
+body {
+  font-family: "Didact Gothic", sans-serif;
+  background-color: #58a4b0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-title {
+  font-family: "Gloria Hallelujah";
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+.section {
+  height: 100vh;
+  padding: 16px;
+}
+
+.bg-tertiary {
+  background-color: #bac1b8;
+}
+
+.bg-secondary {
+  background-color: #0c7c59;
+}
+
+#home {
+  padding-top: 50px;
+}
+
+.container {
+  margin: auto;
+  max-width: 800px;
+  height: 50%;
+}
+
+.card {
+  padding: 2rem;
+  background: white;
+}
+
+.card-narrow {
+  width: 200px;
+}
+
+.standard-border {
+  border: 1px solid #58a4b0;
+}
+
+.fancy-input {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0);
+  outline: none;
+  height: 34px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.fancy-input:focus {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #58a4b0;
+}
+
+.btn-primary,
+.btn-secondary {
+  cursor: pointer;
+  border: none;
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  transition: all ease-in-out 300ms;
+  &:hover {
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.3)
+    }
+}
+
+.btn-primary {
+  color: white;
+  background: #58a4b0;
+}
+
+.btn-secondary {
+  color: #58a4b0;
+  background: white;
+}
+
+.d-block {
+  display: block;
+}
+
+.m-t {
+  margin-top: 1rem;
+}
+
+.m-r {
+  margin-right: 1rem;
+}
+
+.m-l {
+  margin-left: 1rem;
+}
+
+.m-l-sm {
+  margin-left: 0.5rem;
+}
+
+.p-t {
+  padding-top: 1rem;
+}
+
+.navigation {
+  height: 50px;
+  background: #58a4b0;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 0 10px;
+}
+
+.navigation-item {
+  padding: 15px;
+  color: white;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  border-bottom: 1px solid #58a4b0;
+  padding: 8px 0;
+  color: #bac1b8;
+}
+
+.text-accent {
+  color: #d64933;
+}
+
+.text-black {
+  color: initial;
+}
+
+.round-border {
+  border-radius: 8px;
+}
+
+.drop-shadow {
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+.m-auto {
+  margin-left: auto
+  margin-right: auto
+  }
