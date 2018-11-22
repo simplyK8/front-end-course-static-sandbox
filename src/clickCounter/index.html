@@ -14,12 +14,13 @@
   <body class="bg-tertiary">
     <div class="card card-narrow round-border standard-border m-auto m-t">
       <div class="info">
-        <div>Click counter</div>
+        <div class="text-black">Click counter</div>
         <div class="m-t">
-          <span class="info-key">click:</span><span class="text-accent">0</span>
+          <span class="info-key">click:</span><span id="click-value" class="text-accent">0</span>
         </div>
       </div>
-      <button class="d-block round-border btn-primary m-t">Click</button>
+      <button id="click-btn" class="d-block round-border btn-primary m-t">Click</button>
+      <button id="click-reset" class="d-block round-border btn-primary m-t">Reset</button>
     </div>
   </body>
 </html>
