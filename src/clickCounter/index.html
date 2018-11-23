@@ -12,15 +12,28 @@
   </head>
 
   <body class="bg-tertiary">
-    <div class="card card-narrow round-border standard-border m-auto m-t">
+    <div class="card drop-shadow card-narrow round-border standard-border m-auto m-t">
       <div class="info">
         <div class="text-black">Click counter</div>
         <div class="m-t">
-          <span class="info-key">click:</span><span id="click-value" class="text-accent">0</span>
+          <span class="info-key">Max Value:</span
+          ><span id="value-increased" class="text-accent">20</span>
+        </div>
+        <div class="m-t">
+          <span class="info-key">clicks:</span><span id="click-value" class="text-accent">0</span>
+        </div>
+        <div class="m-t">
+          <span class="info-key">clicks left:</span
+          ><span id="clicks-left" class="text-accent">20</span>
+        </div>
+        <div class="m-t">
+          <span class="info-key">Step:</span><span id="step-value" class="text-accent">1</span>
         </div>
       </div>
       <button id="click-btn" class="d-block round-border btn-primary m-t">Click</button>
       <button id="click-reset" class="d-block round-border btn-primary m-t">Reset</button>
+      <button id="increase-step" class="d-block round-border btn-primary m-t">Increase Step</button>
+      <button id="increase-value" class="d-block round-border btn-primary m-t">Increase Max</button>
     </div>
   </body>
 </html>
