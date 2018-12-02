@@ -129,14 +129,10 @@ cards.forEach(function(item) {
 	const age = createField(item.age)
 	const species = createField(item.species)
 	const occupation = createField(item.occupation)
+	const talent = createField(item.talent)
 
-	const talent = document.createElement('h3')
-	talent.innerHTML = item.talent
-	talent.classList.add('text-center', 'card-text')
-	talent.style.visibility = 'hidden'
-
-	if (canHandleEva(item)) {
-		talent.style.visibility = 'visible'
+	if (canHandleEva(item) === false) {
+		talent.style.visibility = 'hidden'
 	}
 
 	if (item.occupation === EVAPILOT) {
