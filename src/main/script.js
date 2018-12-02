@@ -130,18 +130,6 @@ cards.forEach(function(item) {
 	const species = createField(item.species)
 	const occupation = createField(item.occupation)
 
-	// const species = document.createElement('h3')
-	// species.innerHTML = item.species
-	// species.classList.add('text-center', 'card-text')
-
-	// const age = document.createElement('h3')
-	// age.innerHTML = item.age
-	// age.classList.add('text-center', 'card-text')
-
-	// const occupation = document.createElement('h3')
-	// occupation.innerHTML = item.occupation
-	// occupation.classList.add('text-center', 'card-text')
-
 	const talent = document.createElement('h3')
 	talent.innerHTML = item.talent
 	talent.classList.add('text-center', 'card-text')
