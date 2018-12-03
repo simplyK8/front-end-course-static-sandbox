@@ -10,7 +10,7 @@ const cards = [
 		name: 'Eva 01',
 		avatar: 'https://i.pinimg.com/originals/25/9b/fd/259bfddcb90ee8a265392bfbcdfca2c1.png',
 		species: ROBOT,
-		age: 5,
+		age: null,
 		occupation: EVA,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -20,7 +20,7 @@ const cards = [
 		name: 'Eva 02',
 		avatar: 'https://ru.myanimeshelf.com/upload/dynamic/2011-08/31/eva-022.JPG',
 		species: ROBOT,
-		age: 5,
+		age: null,
 		occupation: EVA,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -30,7 +30,7 @@ const cards = [
 		name: 'Eva 00',
 		avatar: 'http://images2.fanpop.com/image/photos/9200000/EVA-00-evangelion-9207743-640-480.jpg',
 		species: ROBOT,
-		age: 5,
+		age: null,
 		occupation: EVA,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -39,7 +39,7 @@ const cards = [
 		name: 'Shinji Ikari',
 		avatar: 'https://pm1.narvii.com/6057/9dae51eb11235139050eae65fdc63205f8264fdb_hq.jpg',
 		species: HUMAN,
-		age: '16',
+		age: 16,
 		occupation: EVAPILOT,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -49,7 +49,7 @@ const cards = [
 		name: 'Asuka Soryu',
 		avatar: 'https://moe.shikimori.org/system/user_images/original/31022/187747.jpg',
 		species: HUMAN,
-		age: '16',
+		age: 16,
 		occupation: EVAPILOT,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -59,7 +59,7 @@ const cards = [
 		name: 'Rei Ayanami',
 		avatar: 'https://pm1.narvii.com/6204/566a1ee2bab152142f2f28418117df005aa6cf94_hq.jpg',
 		species: HUMAN,
-		age: '16',
+		age: 16,
 		occupation: EVAPILOT,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -69,7 +69,7 @@ const cards = [
 		name: 'Misato Katsuragi',
 		avatar: 'https://myanimelist.cdn-dena.com/images/characters/3/317294.jpg',
 		species: HUMAN,
-		age: '30',
+		age: 30,
 		occupation: NERVWORKER,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -79,7 +79,7 @@ const cards = [
 		name: 'Gendo Ikari',
 		avatar: 'https://i.kym-cdn.com/photos/images/newsfeed/000/015/575/Gendo_Ikari_by_Darthval.jpg',
 		species: HUMAN,
-		age: '45',
+		age: 45,
 		occupation: NERVWORKER,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -89,7 +89,7 @@ const cards = [
 		name: 'Ritsuko Akagi',
 		avatar: 'http://animeperson.com/images/character/c11d65125b.jpg',
 		species: HUMAN,
-		age: '32',
+		age: 32,
 		occupation: NERVWORKER,
 		badge: 'https://ih0.redbubble.net/image.43104463.5427/flat,1000x1000,075,f.jpg',
 		talent: TALENT,
@@ -102,11 +102,15 @@ function canHandleEva(item) {
 }
 
 function createField(text) {
-	const field = document.createElement('h3')
+	const field = document.createElement('h4')
 	field.innerHTML = text
 	field.classList.add('text-center', 'card-text')
 
 	return field
+}
+
+function formatAge(item) {
+	return item.age ? item.age : 'age unknown'
 }
 
 cards.forEach(function(item) {
@@ -120,24 +124,20 @@ cards.forEach(function(item) {
 	const badge = document.createElement('img')
 	badge.src = item.badge
 	badge.classList.add('badge')
-	badge.style.visibility = 'hidden'
 
 	const name = document.createElement('h2')
 	name.innerHTML = item.name
 	name.classList.add('text-center', 'text-title')
 
-	const age = createField(item.age)
+	const age = createField(formatAge(item))
+
 	const species = createField(item.species)
 	const occupation = createField(item.occupation)
 	const talent = createField(item.talent)
 
-	if (canHandleEva(item) === false) {
-		talent.style.visibility = 'hidden'
-	}
-
 	if (item.occupation === EVAPILOT) {
 		name.classList.add('text-accent')
-		badge.style.visibility = 'visible'
+		card.append(badge)
 	}
 
 	if (item.occupation === EVA) {
@@ -145,11 +145,12 @@ cards.forEach(function(item) {
 	}
 
 	card.append(avatar)
-	card.append(badge)
 	card.append(name)
 	card.append(species)
 	card.append(age)
+	if (canHandleEva(item)) {
+		card.append(talent)
+	}
 	card.append(occupation)
-	card.append(talent)
 	container.append(card)
 })
